@@ -1,98 +1,55 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Range Automobiles PVT LTD | Premium Imports</title>
-    <style>
-        /* CSS Styling */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        
-        body { background: #0a0a0a; color: white; line-height: 1.6; }
+// =========================
+// FILE: script.js
+// =========================
 
-        /* Color Theme: Black, Maroon, and White */
-        :root {
-            --maroon: #800000;
-            --accent-red: #b30000;
-            --pure-white: #ffffff;
-            --soft-white: #e0e0e0;
-        }
+// LOADER
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1542362567-b05500269774?q=80&w=1920') no-repeat center center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center;
-        }
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
+});
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            padding: 3rem; border-radius: 30px; 
-            border: 1px solid rgba(128, 0, 0, 0.3);
-            max-width: 900px; margin: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+// MOBILE MENU
 
-        .logo-placeholder {
-            width: 120px; margin-bottom: 20px;
-        }
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-        h1 { font-size: 3rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; color: var(--pure-white); }
-        .maroon-text { color: var(--maroon); }
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-        .tagline { font-size: 1.2rem; color: var(--soft-white); margin-bottom: 30px; }
+// FILTER VEHICLES
 
-        /* Buttons */
-        .btn-container { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        
-        .cta-btn {
-            padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold;
-            transition: 0.3s; font-size: 1rem;
-        }
+function filterCars(category){
 
-        .whatsapp-btn { background: var(--maroon); color: white; border: 2px solid var(--maroon); }
-        .whatsapp-btn:hover { background: var(--accent-red); border-color: var(--accent-red); }
+  const cards = document.querySelectorAll(".car-card");
 
-        .fb-btn { background: transparent; color: white; border: 2px solid white; }
-        .fb-btn:hover { background: white; color: black; }
+  cards.forEach(card => {
 
-        /* Sourcing Section */
-        .sourcing { padding: 80px 20px; text-align: center; background: #000; }
-        .countries { font-size: 1.5rem; font-weight: bold; color: var(--maroon); margin-top: 20px; }
-        
-        .trust-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px; max-width: 1100px; margin: 50px auto;
-        }
+    if(category === "all"){
+      card.style.display = "block";
+    }
 
-        .trust-box {
-            padding: 40px; background: #111; border-radius: 15px;
-            border-top: 4px solid var(--maroon);
-        }
+    else if(card.classList.contains(category)){
+      card.style.display = "block";
+    }
 
-        footer { padding: 50px; text-align: center; border-top: 1px solid #222; opacity: 0.7; }
+    else{
+      card.style.display = "none";
+    }
 
-    </style>
-</head>
-<body>
+  });
 
-    <section class="hero">
-        <div class="glass-card">
-            <p style="color: var(--maroon); font-weight: bold; letter-spacing: 3px;">ESTABLISHED 2018</p>
-            <h1>RANGE <span class="maroon-text">AUTOMOBILES</span></h1>
-            <p class="tagline">100% Transparent & Trusted Car Imports to Sri Lanka.</p>
-            
-            <div class="btn-container">
-                <a href="https://wa.me/94508324828" class="cta-btn whatsapp-btn">Chat on WhatsApp</a>
-                <a href="https://www.facebook.com/search/top?q=range%20automobiles%20pvt%20ltd" target="_blank" class="cta-btn fb-btn">Follow on Facebook</a>
-            </div>
-        </div>
-    </section>
+}
 
-    <section class="sourcing">
-        <h2>Global Sourcing Excellence</h2>
-        <p>Specializing in direct imports from:</p>
-        <div class="cou…
+// CONTACT FORM
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  alert("Message Sent Successfully!");
+
+});

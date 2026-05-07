@@ -1,55 +1,227 @@
 
-// =========================
-// FILE: script.js
-// =========================
+<!-- =========================
+FILE: index.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Range Automobiles Pvt Ltd</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
 
-// LOADER
+<body>
 
-window.addEventListener("load", () => {
-  document.getElementById("loader").style.display = "none";
-});
+<!-- LOADER -->
+<div id="loader">
+  <h1>Range Automobiles</h1>
+</div>
 
-// MOBILE MENU
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <span>Range Automobiles Pvt Ltd</span>
+    </div>
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#vehicles">Vehicles</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+    <div class="menu-btn" id="menuBtn">
+      <i class="fa fa-bars"></i>
+    </div>
+  </nav>
+</header>
 
-// FILTER VEHICLES
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Premium Vehicle Imports to Sri Lanka</h1>
+    <p>Japanese | Hybrid | Luxury Cars</p>
 
-function filterCars(category){
+    <div class="hero-buttons">
+      <a href="#vehicles" class="btn">View Vehicles</a>
+      <a href="https://wa.me/971508324828" class="btn btn2">
+        WhatsApp Inquiry
+      </a>
+    </div>
+  </div>
+</section>
 
-  const cards = document.querySelectorAll(".car-card");
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
 
-  cards.forEach(card => {
+  <div class="about-text">
+    <h2>About Us</h2>
+    <p>
+      Range Automobiles Pvt Ltd is a trusted vehicle importer specializing in
+      Japanese, hybrid, and luxury vehicle imports to Sri Lanka.
+    </p>
 
-    if(category === "all"){
-      card.style.display = "block";
-    }
+    <p>
+      We provide high-quality vehicles with transparency, reliability,
+      and competitive pricing.
+    </p>
+  </div>
+</section>
 
-    else if(card.classList.contains(category)){
-      card.style.display = "block";
-    }
+<!-- VEHICLES -->
+<section class="vehicles" id="vehicles">
 
-    else{
-      card.style.display = "none";
-    }
+  <h2 class="section-title">Featured Vehicles</h2>
 
-  });
+  <div class="filter-buttons">
+    <button onclick="filterCars('all')">All</button>
+    <button onclick="filterCars('suv')">SUV</button>
+    <button onclick="filterCars('hybrid')">Hybrid</button>
+    <button onclick="filterCars('luxury')">Luxury</button>
+  </div>
 
-}
+  <div class="vehicle-container">
 
-// CONTACT FORM
+    <div class="car-card suv">
+      <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop">
+      <h3>Toyota Prado</h3>
+      <p>2023 | Diesel | Automatic</p>
+      <h4>LKR 28 Million</h4>
 
-document
-.getElementById("contactForm")
-.addEventListener("submit", function(e){
+      <a href="https://wa.me/971508324828" class="card-btn">
+        Inquire Now
+      </a>
+    </div>
 
-  e.preventDefault();
+    <div class="car-card hybrid">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop">
+      <h3>Toyota Prius</h3>
+      <p>2022 | Hybrid | Automatic</p>
+      <h4>LKR 12 Million</h4>
 
-  alert("Message Sent Successfully!");
+      <a href="https://wa.me/971508324828" class="card-btn">
+        Inquire Now
+      </a>
+    </div>
 
-});
+    <div class="car-card luxury">
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop">
+      <h3>BMW X5</h3>
+      <p>2024 | Petrol | Automatic</p>
+      <h4>LKR 35 Million</h4>
+
+      <a href="https://wa.me/971508324828" class="card-btn">
+        Inquire Now
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="service-container">
+
+    <div class="service-card">
+      <i class="fa fa-car"></i>
+      <h3>Vehicle Importing</h3>
+    </div>
+
+    <div class="service-card">
+      <i class="fa fa-ship"></i>
+      <h3>Shipping & Clearance</h3>
+    </div>
+
+    <div class="service-card">
+      <i class="fa fa-file"></i>
+      <h3>Registration Support</h3>
+    </div>
+
+    <div class="service-card">
+      <i class="fa fa-gavel"></i>
+      <h3>Auction Buying</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+  <h2 class="section-title">Gallery</h2>
+
+  <div class="gallery-container">
+
+    <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200&auto=format&fit=crop">
+    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&auto=format&fit=crop">
+    <img src="https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?q=80&w=1200&auto=format&fit=crop">
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="contact-container">
+
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Range Automobiles Pvt Ltd</h3>
+
+      <p>
+        <i class="fa fa-phone"></i>
+        0508324828
+      </p>
+
+      <p>
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp Available
+      </p>
+
+      <p>
+        <i class="fab fa-facebook"></i>
+        Facebook: Range Automobiles Pvt Ltd
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2026 Range Automobiles Pvt Ltd - All Rights Reserved
+  </p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/971508324828" class="whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

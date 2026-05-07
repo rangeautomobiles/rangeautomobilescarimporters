@@ -6,52 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RANGE Automobiles PVT LTD</title>
     <style>
-        :root { --maroon: #800000; --dark: #000000; --gold: #c5a059; --white: #ffffff; }
+        :root { --maroon: #800000; --dark: #000000; --white: #ffffff; --light-grey: #f4f4f4; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
         body { background-color: var(--dark); color: var(--white); line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
         nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--maroon); position: sticky; top: 0; z-index: 1000; }
         .nav-logo { display: flex; align-items: center; gap: 15px; }
-        .nav-logo img { height: 50px; }
-        .nav-logo span { font-weight: bold; letter-spacing: 2px; font-size: 1.2rem; }
+        .nav-logo img { height: 50px; } /* Ensure your file is named logo.png */
+        .nav-logo span { font-weight: bold; letter-spacing: 2px; font-size: 1.2rem; text-transform: uppercase; }
 
-        /* Hero Section with Porsche Background */
+        /* Hero Section with Cinematic Background */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                         url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;
         }
         .hero-content { max-width: 900px; animation: fadeIn 2s; }
-        h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 8px; margin-bottom: 10px; }
-        .gold-text { color: var(--gold); }
-        .hero p { font-size: 1.3rem; letter-spacing: 1px; color: #ccc; margin-bottom: 40px; }
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 8px; margin-bottom: 10px; text-transform: uppercase; }
+        .hero p { font-size: 1.3rem; letter-spacing: 1px; color: var(--light-grey); margin-bottom: 40px; font-weight: 300; }
 
         /* Buttons */
         .btn-box { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .btn { padding: 18px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border-radius: 2px; }
-        .btn-maroon { background: var(--maroon); color: white; }
+        .btn-maroon { background: var(--maroon); color: white; border: 1px solid var(--maroon); }
         .btn-white { border: 1px solid white; color: white; }
-        .btn:hover { transform: translateY(-5px); opacity: 0.9; box-shadow: 0 10px 20px rgba(128,0,0,0.3); }
+        .btn:hover { background: white; color: black; transform: translateY(-5px); }
 
         /* High-Brand Showcase Section */
-        .showcase { padding: 100px 5%; background: #080808; text-align: center; }
-        .showcase h2 { font-size: 2.5rem; margin-bottom: 50px; letter-spacing: 3px; color: var(--maroon); }
+        .showcase { padding: 100px 5%; background: #0a0a0a; text-align: center; }
+        .showcase h2 { font-size: 2.2rem; margin-bottom: 50px; letter-spacing: 4px; text-transform: uppercase; color: var(--white); }
         .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .car-card { background: #111; border-bottom: 4px solid var(--maroon); overflow: hidden; }
-        .car-card img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s; filter: grayscale(30%); }
-        .car-card:hover img { transform: scale(1.1); filter: grayscale(0%); }
+        .car-card { background: #000; border: 1px solid #222; border-bottom: 4px solid var(--maroon); overflow: hidden; transition: 0.3s; }
+        .car-card img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s; }
+        .car-card:hover { border-color: var(--maroon); }
+        .car-card:hover img { transform: scale(1.05); }
         .car-card div { padding: 25px; text-align: left; }
-        .car-card h3 { color: var(--gold); margin-bottom: 10px; text-transform: uppercase; }
+        .car-card h3 { color: var(--white); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .car-card p { color: #888; font-size: 0.95rem; }
 
         /* Philosophy & Privacy */
-        .about-section { padding: 100px 10%; text-align: center; border-top: 1px solid #222; }
-        .privacy-box { border: 1px solid #444; padding: 60px 40px; background: rgba(255,255,255,0.02); }
-        .privacy-box h2 { color: var(--maroon); margin-bottom: 30px; font-size: 2.2rem; }
-        .privacy-box p { font-size: 1.1rem; color: #aaa; max-width: 800px; margin: 0 auto; line-height: 2; }
+        .about-section { padding: 100px 10%; text-align: center; background: var(--dark); }
+        .privacy-box { border: 1px solid #333; padding: 60px 40px; background: rgba(255,255,255,0.02); }
+        .privacy-box h2 { color: var(--maroon); margin-bottom: 30px; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; }
+        .privacy-box p { font-size: 1.1rem; color: #ccc; max-width: 800px; margin: 0 auto; line-height: 1.8; }
 
-        footer { padding: 60px; text-align: center; border-top: 1px solid #222; background: #000; color: #555; }
+        footer { padding: 60px; text-align: center; border-top: 1px solid #222; background: #000; color: #666; }
+        .footer-logo { font-weight: bold; color: var(--white); letter-spacing: 2px; margin-bottom: 10px; display: block; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -63,12 +65,12 @@
             <img src="logo.png" alt="Logo">
             <span><b style="color:var(--maroon)">RANGE</b> Automobiles</span>
         </div>
-        <div style="color: var(--gold); font-size: 0.8rem; letter-spacing: 1px;">ESTABLISHED 2018</div>
+        <div style="color: var(--white); font-size: 0.8rem; letter-spacing: 1px; opacity: 0.7;">ESTABLISHED 2018</div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>RANGE <span class="gold-text">Automobiles</span></h1>
+            <h1>RANGE <span style="color: var(--maroon);">Automobiles</span></h1>
             <p>Providing Islandwide Excellence in Luxury Vehicle Sourcing Since 2018.</p>
             <div class="btn-box">
                 <a href="https://wa.me/971508324828" class="btn btn-maroon">Direct Inquiry</a>
@@ -78,27 +80,27 @@
     </section>
 
     <section class="showcase">
-        <h2>Our Global Portfolio</h2>
+        <h2>Global Portfolio</h2>
         <div class="car-grid">
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1521410842031-158a74e542ef?q=80&w=800" alt="Range Rover">
                 <div>
                     <h3>Premium SUVs</h3>
-                    <p>Direct sourcing of high-spec Range Rovers and luxury 4x4s.</p>
+                    <p>Sourcing high-spec Range Rovers and luxury 4x4 vehicles directly from global auctions.</p>
                 </div>
             </div>
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800" alt="German Luxury">
                 <div>
-                    <h3>German Excellence</h3>
-                    <p>Expertly importing BMW, Mercedes, and Audi with verified histories.</p>
+                    <h3>European Excellence</h3>
+                    <p>Specializing in BMW, Mercedes-Benz, and Audi with 100% transparent history.</p>
                 </div>
             </div>
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1542362567-b05500269774?q=80&w=800" alt="Performance Cars">
                 <div>
                     <h3>Performance Selection</h3>
-                    <p>High-end performance models from Japan, UK, and Thailand.</p>
+                    <p>High-end performance models sourced from Japan, UK, and Thailand.</p>
                 </div>
             </div>
         </div>
@@ -108,14 +110,15 @@
         <div class="privacy-box">
             <h2>Elite Privacy & Professionalism</h2>
             <p>
-                At RANGE Automobiles, we value our <b>customers' privacy</b> more than the social reaches of our page. To maintain the highest class of professionalism, we do not showcase client delivery photos or personal data. We believe your high-value acquisition deserves absolute discretion and a premium experience.
+                At <b>RANGE Automobiles</b>, we value our customers' privacy above social media reach. To maintain the highest class of professionalism, we choose <b>not</b> to showcase client delivery photos. Your acquisition deserves absolute discretion.
             </p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 RANGE Automobiles PVT LTD.</p>
-        <p style="margin-top:10px;">Transparency • Privacy • Professionalism</p>
+        <span class="footer-logo">RANGE Automobiles PVT LTD</span>
+        <p>Transparency • Privacy • Professionalism</p>
+        <p style="margin-top: 20px; font-size: 0.8rem;">© 2026 Serving Sri Lanka Islandwide</p>
     </footer>
 
 </body>

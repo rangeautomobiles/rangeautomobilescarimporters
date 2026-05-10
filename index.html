@@ -3,312 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RANGE Automobiles PVT LTD</title>
+    <title>RANGE Automobiles PVT LTD | Home</title>
     <style>
         :root { --maroon: #800000; --dark: #000000; --white: #ffffff; --light-grey: #f4f4f4; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
         body { background-color: var(--dark); color: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-        /* Navigation */
-        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--maroon); position: sticky; top: 0; z-index: 1000; }
+        /* Updated Navigation with Tabs */
+        nav { 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(0,0,0,0.95); 
+            border-bottom: 2px solid var(--maroon); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
         .nav-logo { display: flex; align-items: center; gap: 15px; }
-        .nav-logo img { height: 50px; } /* Ensure your file is named logo.png */
-        .nav-logo span { font-weight: bold; letter-spacing: 2px; font-size: 1.2rem; text-transform: uppercase; }
+        .nav-logo img { height: 45px; }
+        .nav-logo span { font-weight: bold; letter-spacing: 2px; font-size: 1.1rem; text-transform: uppercase; }
+        
+        .nav-tabs { display: flex; list-style: none; gap: 30px; }
+        .nav-tabs a { 
+            text-decoration: none; 
+            color: var(--white); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .nav-tabs a:hover, .nav-tabs a.active { color: var(--maroon); border-bottom: 2px solid var(--maroon); padding-bottom: 5px; }
 
-        /* Hero Section with Cinematic Background */
+        /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                         url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920') no-repeat center center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;
+            display: flex; align-items: center; justify-content: center; text-align: center;
         }
-        .hero-content { max-width: 900px; animation: fadeIn 2s; }
-        h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 8px; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 1.3rem; letter-spacing: 1px; color: var(--light-grey); margin-bottom: 40px; font-weight: 300; }
+        h1 { font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 5px; text-transform: uppercase; }
+        
+        /* High-Brand Showcase */
+        .showcase { padding: 80px 5%; background: #0a0a0a; text-align: center; }
+        .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .car-card { background: #000; border: 1px solid #222; border-bottom: 4px solid var(--maroon); transition: 0.3s; padding-bottom: 20px;}
+        .car-card img { width: 100%; height: 200px; object-fit: cover; }
+        .btn-spec { display: inline-block; margin-top: 15px; padding: 10px 20px; border: 1px solid var(--maroon); color: white; text-decoration: none; font-size: 0.8rem; }
+        .btn-spec:hover { background: var(--maroon); }
 
-        /* Buttons */
-        .btn-box { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .btn { padding: 18px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border-radius: 2px; }
-        .btn-maroon { background: var(--maroon); color: white; border: 1px solid var(--maroon); }
-        .btn-white { border: 1px solid white; color: white; }
-        .btn:hover { background: white; color: black; transform: translateY(-5px); }
-
-        /* High-Brand Showcase Section */
-        .showcase { padding: 100px 5%; background: #0a0a0a; text-align: center; }
-        .showcase h2 { font-size: 2.2rem; margin-bottom: 50px; letter-spacing: 4px; text-transform: uppercase; color: var(--white); }
-        .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .car-card { background: #000; border: 1px solid #222; border-bottom: 4px solid var(--maroon); overflow: hidden; transition: 0.3s; }
-        .car-card img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s; }
-        .car-card:hover { border-color: var(--maroon); }
-        .car-card:hover img { transform: scale(1.05); }
-        .car-card div { padding: 25px; text-align: left; }
-        .car-card h3 { color: var(--white); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .car-card p { color: #888; font-size: 0.95rem; }
-
-        /* Philosophy & Privacy */
-        .about-section { padding: 100px 10%; text-align: center; background: var(--dark); }
-        .privacy-box { border: 1px solid #333; padding: 60px 40px; background: rgba(255,255,255,0.02); }
-        .privacy-box h2 { color: var(--maroon); margin-bottom: 30px; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; }
-        .privacy-box p { font-size: 1.1rem; color: #ccc; max-width: 800px; margin: 0 auto; line-height: 1.8; }
-
-        footer { padding: 60px; text-align: center; border-top: 1px solid #222; background: #000; color: #666; }
-        .footer-logo { font-weight: bold; color: var(--white); letter-spacing: 2px; margin-bottom: 10px; display: block; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        footer { padding: 40px; text-align: center; border-top: 1px solid #222; background: #000; color: #666; }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-logo">
             <img src="logo.png" alt="Logo">
             <span><b style="color:var(--maroon)">RANGE</b> Automobiles</span>
         </div>
-        <div style="color: var(--white); font-size: 0.8rem; letter-spacing: 1px; opacity: 0.7;">ESTABLISHED 2018</div>
+        <ul class="nav-tabs">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="specifications.html">Specifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
             <h1>RANGE <span style="color: var(--maroon);">Automobiles</span></h1>
-            <p>Providing Islandwide Excellence in Luxury Vehicle Sourcing Since 2018.</p>
-            <div class="btn-box">
-                <a href="https://wa.me/971508324828" class="btn btn-maroon">Direct Inquiry</a>
-                <a href="https://www.facebook.com/profile.php?id=61588962070957" target="_blank" class="btn btn-white">Facebook Page</a>
-            </div>
+            [span_3](start_span)<p style="margin-top:20px; letter-spacing:1px; color:#ccc;">Providing Islandwide Excellence in Luxury Vehicle Sourcing Since 2018[span_3](end_span).</p>
         </div>
     </section>
 
     <section class="showcase">
-        <h2>Global Portfolio</h2>
+        <h2 style="letter-spacing: 3px; text-transform: uppercase;">Global Portfolio</h2>
         <div class="car-grid">
             <div class="car-card">
-                <img src="range-rover.png" alt="Range Rover">
-                <div>
-                    <h3>Premium SUVs</h3>
-                    <p>Sourcing high-spec Range Rovers and luxury 4x4 vehicles directly from global auctions.</p>
-                </div>
+                <img src="range-rover.png" alt="SUV">
+                <h3 style="margin-top:15px;">Premium SUVs</h3>
+                [span_4](start_span)<p style="font-size:0.9rem; color:#888; padding:0 15px;">High-spec Range Rovers directly from global auctions[span_4](end_span).</p>
+                <a href="specifications.html" class="btn-spec">View Specs</a>
             </div>
-            <div class="car-card">
-                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800" alt="German Luxury">
-                <div>
-                    <h3>European Excellence</h3>
-                    <p>Specializing in BMW, Mercedes-Benz, and Audi with 100% transparent history.</p>
-                </div>
             </div>
-            <div class="car-card">
-                <img src="performance.png"alt="Performance Cars">
-                <div>
-                    <h3>Performance Selection</h3>
-                    <p>High-end performance models sourced from Japan, UK, and Thailand.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="privacy-box">
-            <h2>Elite Privacy & Professionalism</h2>
-            <p>
-                At <b>RANGE Automobiles</b>, we value our customers' privacy above social media reach. To maintain the highest class of professionalism, we choose <b>not</b> to showcase client delivery photos. Your acquisition deserves absolute discretion.
-            </p>
-        </div>
     </section>
 
     <footer>
-        <span class="footer-logo">RANGE Automobiles PVT LTD</span>
-        <p>Transparency • Privacy • Professionalism</p>
-        <p style="margin-top: 20px; font-size: 0.8rem;">© 2026 Serving Sri Lanka Islandwide</p>
+        <span style="color:white; font-weight:bold;">RANGE Automobiles PVT LTD</span>
+        [span_5](start_span)<p>© 2026 Transparency • Privacy • Professionalism[span_5](end_span)</p>
     </footer>
-
 </body>
 </html>
-<video width="100%" controls>
-  <source src="promo.video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<section style="padding: 60px 20px; background-color: #000; color: #fff; text-align: center; font-family: sans-serif; line-height: 1.8;">
-    <div style="max-width: 900px; margin: 0 auto; border: 1px solid #333; padding: 40px; border-radius: 10px; background: linear-gradient(145deg, #000000, #111111);">
-        
-        <h2 style="color: #e63946; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Your Journey with Range Automobiles</h2>
-        
-        <p style="font-size: 16px; color: #ccc; margin-bottom: 30px;">
-            At Range Automobiles, we believe the path to your dream vehicle should be as smooth as the drive itself. We operate with a <strong>fully transparent, guided process</strong> designed to keep you in total control.
-        </p>
-
-        <div style="text-align: left; color: #eee; font-size: 15px;">
-            <p><strong>1. Consultation & Budgeting:</strong> You share your preferred vehicle and budget. We provide expert suggestions and live market pricing based on current currency values and international trends.</p>
-            
-            <p><strong>2. Transparent Quotations:</strong> We provide a full cost breakdown and formal quotations. No hidden fees—you see exactly where every cent is spent.</p>
-            
-            <p><strong>3. Selection & Bidding:</strong> Once confirmed, we bid on vehicles based strictly on your preferences, keeping you involved in the choice.</p>
-            
-            <p><strong>4. Logistics & Documentation:</strong> We assist with LC (Letter of Credit) opening and all administrative tasks. From the moment of purchase, you receive live tracking from the port of loading until it reaches Sri Lanka.</p>
-            
-            <p><strong>5. Clearance & Handover:</strong> We guide you through the tax clearance process so you see the true value and worth of your investment. Finally, we hand over your keys, warranty books, and a vehicle ready for the road.</p>
-        </div>
-
-        <hr style="border: 0; border-top: 1px solid #444; margin: 40px 0;">
-
-        <h3 style="color: #fff; margin-bottom: 15px;">A Commitment to Privacy</h3>
-        <p style="font-size: 15px; color: #aaa; font-style: italic;">
-            "Our customers are our first priority, not our sales tools." 
-        </p>
-        <p style="font-size: 14px; color: #999;">
-            As a strict company policy, we prioritize your privacy and privilege. We do not showcase client faces in handover photos for social media unless specifically requested. We believe the highest form of respect for the trust you place in Range Automobiles is protecting your personal identity.
-        </p>
-    </div>
-</section>
-
-
-
-<section style="padding: 60px 20px; background-color: #000; color: #fff; text-align: center; font-family: sans-serif;">
-    <h2 style="color: #e63946; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px;">Why Choose Range Automobiles?</h2>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
-        
-        <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #333; border-radius: 8px;">
-            <div style="font-size: 30px; margin-bottom: 15px;">🛡️</div>
-            <h3 style="margin-bottom: 10px;">100% Transparency</h3>
-            <p style="color: #ccc; font-size: 14px; line-height: 1.6;">Full documentation, auction sheets, and history reports. No hidden costs, ever.</p>
-        </div>
-
-        <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #333; border-radius: 8px;">
-            <div style="font-size: 30px; margin-bottom: 15px;">🔒</div>
-            <h3 style="margin-bottom: 10px;">Client Privacy</h3>
-            <p style="color: #ccc; font-size: 14px; line-height: 1.6;">We treat every transaction with the highest level of confidentiality and professional care.</p>
-        </div>
-
-        <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #333; border-radius: 8px;">
-            <div style="font-size: 30px; margin-bottom: 15px;">💎</div>
-            <h3 style="margin-bottom: 10px;">Premium Sourcing</h3>
-            <p style="color: #ccc; font-size: 14px; line-height: 1.6;">Direct access to high-end SUVs and luxury sedans from global markets.</p>
-        </div>
-
-    </div>
-</section>
-
-<section style="padding: 60px 20px; background-color: #111; color: #fff; text-align: center; font-family: sans-serif;">
-    <h2 style="color: #fff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px;">The Import Process</h2>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1000px; margin: 0 auto; position: relative;">
-        
-        <div style="flex: 1; min-width: 200px; padding: 10px;">
-            <h1 style="color: #e63946; margin: 0;">01</h1>
-            <h4 style="margin-top: 5px;">Selection</h4>
-            <p style="color: #999; font-size: 13px;">Choose from stock or request a custom model.</p>
-        </div>
-
-        <div style="flex: 1; min-width: 200px; padding: 10px;">
-            <h1 style="color: #e63946; margin: 0;">02</h1>
-            <h4 style="margin-top: 5px;">Verification</h4>
-            <p style="color: #999; font-size: 13px;">Physical inspection & history verification.</p>
-        </div>
-
-        <div style="flex: 1; min-width: 200px; padding: 10px;">
-            <h1 style="color: #e63946; margin: 0;">03</h1>
-            <h4 style="margin-top: 5px;">Logistics</h4>
-            <p style="color: #999; font-size: 13px;">Secure shipping & customs clearance.</p>
-        </div>
-
-        <div style="flex: 1; min-width: 200px; padding: 10px;">
-            <h1 style="color: #e63946; margin: 0;">04</h1>
-            <h4 style="margin-top: 5px;">Delivery</h4>
-            <p style="color: #999; font-size: 13px;">Handover of your dream vehicle.</p>
-        </div>
-
-
-    <section style="padding: 70px 20px; background-color: #000; color: #fff; text-align: center; font-family: sans-serif;">
-    <h2 style="color: #e63946; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 50px;">Islandwide Deliveries</h2>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto;">
-        
-        <div style="flex: 1 1 calc(50% - 20px); min-width: 280px; background-color: #111; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
-            <img src="delivered-1.png" alt="Range Rover Velar" style="width: 100%; height: 250px; object-fit: cover;">
-            <div style="padding: 15px; text-align: center;">
-                <h4 style="margin: 0; color: #fff; text-transform: uppercase;">Range Rover Velar</h4>
-            </div>
-        </div>
-
-        <div style="flex: 1 1 calc(50% - 20px); min-width: 280px; background-color: #111; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
-            <img src="delivered-2.png" alt="Honda Vezel" style="width: 100%; height: 250px; object-fit: cover;">
-            <div style="padding: 15px; text-align: center;">
-                <h4 style="margin: 0; color: #fff; text-transform: uppercase;">Honda Vezel</h4>
-            </div>
-        </div>
-
-        <div style="flex: 1 1 calc(50% - 20px); min-width: 280px; background-color: #111; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
-            <img src="delivered-3.png" alt="Honda Vezel" style="width: 100%; height: 250px; object-fit: cover;">
-            <div style="padding: 15px; text-align: center;">
-                <h4 style="margin: 0; color: #fff; text-transform: uppercase;">Honda Vezel</h4>
-            </div>
-        </div>
-
-        <div style="flex: 1 1 calc(50% - 20px); min-width: 280px; background-color: #111; border-radius: 8px; overflow: hidden; border: 1px solid #222;">
-            <img src="delivered-4.png" alt="Honda Vezel" style="width: 100%; height: 250px; object-fit: cover;">
-            <div style="padding: 15px; text-align: center;">
-                <h4 style="margin: 0; color: #fff; text-transform: uppercase;">Honda Vezel</h4>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-        <section style="padding: 60px 20px; background-color: #111; color: #fff; text-align: center; font-family: sans-serif;">
-    <h2 style="color: #fff; margin-bottom: 10px;">Ready to Source Your Vehicle?</h2>
-    <p style="color: #999; margin-bottom: 30px;">Contact us today for a transparent market valuation and quotation.</p>
-    
-    <div style="margin-top: 20px;">
-        <a href="https://wa.me/971508324828" style="background-color: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase;">
-            Message on WhatsApp
-        </a>
-    </div>
-    
-    <p style="margin-top: 40px; font-size: 12px; color: #444;">© 2026 RANGE Automobiles PVT LTD | Established 2018</p>
-</section>
-
-
-<section style="padding: 40px 20px; background-color: var(--dark); color: var(--white); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-    <h2 style="text-align: center; color: var(--white); font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px;">Grade Specifications</h2>
-
-    <div style="max-width: 900px; margin: 0 auto 50px auto; border: 1px solid #333;">
-        <h3 style="background: var(--maroon); color: #fff; padding: 12px 20px; margin: 0; text-transform: uppercase; font-size: 1.1rem;">Honda Vezel (RV Series)</h3>
-        <table style="width: 100%; border-collapse: collapse; background: #111;">
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; width: 30%; color: var(--maroon);">X (Base Hybrid)</td><td style="padding: 15px;">16" Alloy, Honda Sensing, Black Fabric, Manual Tailgate</td></tr>
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; color: var(--maroon);">Z (High Hybrid)</td><td style="padding: 15px;">18" Alloy, Hands-Free Power Tailgate, Combination Leather, BSI</td></tr>
-            <tr><td style="padding: 15px; font-weight: bold; color: var(--maroon);">PLaY (Premium)</td><td style="padding: 15px;">Panoramic Glass Roof, Two-Tone Paint, Exclusive Greige Interior</td></tr>
-        </table>
-    </div>
-
-    <div style="max-width: 900px; margin: 0 auto 50px auto; border: 1px solid #333;">
-        <h3 style="background: var(--maroon); color: #fff; padding: 12px 20px; margin: 0; text-transform: uppercase; font-size: 1.1rem;">Toyota Raize (1000cc Turbo)</h3>
-        <table style="width: 100%; border-collapse: collapse; background: #111;">
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; width: 30%; color: var(--maroon);">X Grade</td><td style="padding: 15px;">16" Steel Wheels, Smart Assist, Basic Interior</td></tr>
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; color: var(--maroon);">G Grade</td><td style="padding: 15px;">16" Alloy Wheels, LED Headlamps, Digital Speedometer</td></tr>
-            <tr><td style="padding: 15px; font-weight: bold; color: var(--maroon);">Z Grade</td><td style="padding: 15px;">17" Diamond Cut Alloys, Sequential Turn Signals, Adaptive Cruise Control</td></tr>
-        </table>
-    </div>
-
-    <div style="max-width: 900px; margin: 0 auto 50px auto; border: 1px solid #333;">
-        <h3 style="background: var(--maroon); color: #fff; padding: 12px 20px; margin: 0; text-transform: uppercase; font-size: 1.1rem;">Suzuki Every (DA17V Van)</h3>
-        <table style="width: 100%; border-collapse: collapse; background: #111;">
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; width: 30%; color: var(--maroon);">PA / PA Limited</td><td style="padding: 15px;">Vinyl Seats, Front Power Windows (Limited), Work-Ready</td></tr>
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; color: var(--maroon);">PC / PC Limited</td><td style="padding: 15px;">Fabric Interior, CD Player, Electric Fold Mirrors</td></tr>
-            <tr><td style="padding: 15px; font-weight: bold; color: var(--maroon);">JOIN / JOIN TURBO</td><td style="padding: 15px;">High-Back Fabric, All Power Windows, Turbo Engine Option</td></tr>
-        </table>
-    </div>
-
-    <div style="max-width: 900px; margin: 0 auto 20px auto; border: 1px solid #333;">
-        <h3 style="background: var(--maroon); color: #fff; padding: 12px 20px; margin: 0; text-transform: uppercase; font-size: 1.1rem;">Daihatsu Mira e:S</h3>
-        <table style="width: 100%; border-collapse: collapse; background: #111;">
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; width: 30%; color: var(--maroon);">L Grade</td><td style="padding: 15px;">Halogen Lamps, 13" Steel Wheels, Smart Assist III</td></tr>
-            <tr style="border-bottom: 1px solid #333;"><td style="padding: 15px; font-weight: bold; color: var(--maroon);">X Grade</td><td style="padding: 15px;">LED Headlights, 14" Aluminum Wheels, Power Mirrors</td></tr>
-            <tr><td style="padding: 15px; font-weight: bold; color: var(--maroon);">G Grade</td><td style="padding: 15px;">Auto-Retract Mirrors, Height Adjustable Seat, Full Safety Pack</td></tr>
-        </table>
-    </div>
-</section>
-        
-
-     

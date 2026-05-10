@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specifications | RANGE Automobiles PVT LTD</title>
+    <style>
+        :root { --maroon: #800000; --dark: #000000; --white: #ffffff; --card-bg: #0a0a0a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: var(--dark); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation Bar */
+        nav { 
+            padding: 10px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(0,0,0,0.95); 
+            border-bottom: 2px solid var(--maroon); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .nav-logo { display: flex; align-items: center; gap: 20px; }
+        .nav-logo img { height: 90px; width: auto; }
+        .nav-logo span { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4rem; }
+        
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--maroon); }
+
+        /* Header */
+        .header { padding: 80px 5% 40px; text-align: center; }
+        .header h1 { font-size: 3rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
+        .header p { color: #888; max-width: 800px; margin: 0 auto; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+
+        /* Layout Grid */
+        .spec-container { padding: 40px 5%; max-width: 1400px; margin: 0 auto; }
+        .category-title { border-left: 5px solid var(--maroon); padding-left: 15px; margin: 40px 0 30px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.8rem; }
+        
+        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .spec-card { background: var(--card-bg); border: 1px solid #222; border-bottom: 4px solid var(--maroon); overflow: hidden; transition: 0.4s; }
+        .spec-card:hover { transform: translateY(-5px); border-color: #444; }
+        
+        .car-img { width: 100%; height: 230px; object-fit: cover; border-bottom: 1px solid #222; }
+
+        /* Table Styling */
+        .spec-table { width: 100%; border-collapse: collapse; }
+        .spec-table th { background: #111; color: var(--maroon); text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.85rem; border-bottom: 1px solid #222; }
+        .spec-table td { padding: 12px 15px; border-bottom: 1px solid #1a1a1a; font-size: 0.9rem; color: #ccc; }
+        .grade-label { font-weight: bold; color: var(--white); width: 35%; }
+
+        footer { padding: 60px; text-align: center; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="logo.png" alt="RANGE Logo"> 
+            <span><b style="color:var(--maroon)">RANGE</b> AUTOMOBILES</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="specifications.html" class="active">Specifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <h1>Technical <span style="color:var(--maroon)">Specifications</span></h1>
+        <p>Premium Grade Data & Technical Excellence Since 2018</p>
+    </header>
+
+    <div class="spec-container">
+
+        <h2 class="category-title">European & Luxury Portfolio</h2>
+        <div class="spec-grid">
+            
+            <div class="spec-card">
+                <img src="bmw.png" alt="BMW 5 Series" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">BMW 5 Series (M-Sport)</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">Engine</td><td>TwinPower Turbo Inline 4 / Hybrid</td></tr>
+                        <tr><td class="grade-label">Transmission</td><td>8-Speed Steptronic Sport</td></tr>
+                        <tr><td class="grade-label">Features</td><td>Live Cockpit, Dakota Leather</td></tr>
+                        <tr><td class="grade-label">Grades</td><td>SE, M-Sport, M-Sport Pro Pack</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="spec-card">
+                <img src="range-rover.png" alt="Range Rover Velar" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">Range Rover Velar</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">Engine</td><td>2.0L Turbo Diesel (D200) / Petrol</td></tr>
+                        <tr><td class="grade-label">Drive</td><td>AWD with Terrain Response 2</td></tr>
+                        <tr><td class="grade-label">Tech</td><td>Matrix LED, Meridian Sound</td></tr>
+                        <tr><td class="grade-label">Suspension</td><td>Electronic Air Suspension</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="spec-card">
+                <img src="peugeot.png" alt="Peugeot 3008" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">Peugeot 3008 GT Line</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">Interior</td><td>i-Cockpit® with 12.3" Display</td></tr>
+                        <tr><td class="grade-label">Safety</td><td>Active Safety Brake, Lane Assist</td></tr>
+                        <tr><td class="grade-label">Design</td><td>GT Line Styling, Diamond Roof</td></tr>
+                        <tr><td class="grade-label">Seating</td><td>Massage Seats, Nappa Leather</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="spec-card">
+                <img src="vezel.png" alt="Honda Vezel" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">Honda Vezel (e:HEV)</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">Powertrain</td><td>1.5L i-VTEC Hybrid (e:HEV)</td></tr>
+                        <tr><td class="grade-label">Grades</td><td>G, Z, PLaY Package</td></tr>
+                        <tr><td class="grade-label">Safety</td><td>Honda SENSING Suite</td></tr>
+                        <tr><td class="grade-label">Utility</td><td>Magic Seats, Hands-free Tailgate</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <h2 class="category-title">Japanese Compact Portfolio</h2>
+        <div class="spec-grid">
+
+            <div class="spec-card">
+                <img src="every.png" alt="Suzuki Every" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">Suzuki Every (DA17V)</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">PA / PA Ltd</td><td>Basic Utility, Manual Windows</td></tr>
+                        <tr><td class="grade-label">PC / PC Ltd</td><td>Fabric Seats, Electric Mirrors</td></tr>
+                        <tr><td class="grade-label">JOIN / Turbo</td><td>High-Back Seats, Power Windows</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="spec-card">
+                <img src="mira.png" alt="Daihatsu Mira" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">Daihatsu Mira e:S</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">L Grade</td><td>Smart Assist III, Halogen Lamps</td></tr>
+                        <tr><td class="grade-label">X Grade</td><td>LED Headlamps, Keyless Entry</td></tr>
+                        <tr><td class="grade-label">G Grade</td><td>14" Alloys, Auto Climate Control</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="spec-card">
+                <img src="wagonr.png" alt="Suzuki Wagon R" class="car-img">
+                <table class="spec-table">
+                    <thead><tr><th colspan="2">Suzuki Wagon R (Hybrid)</th></tr></thead>
+                    <tbody>
+                        <tr><td class="grade-label">FX Grade</td><td>Keyless Push Start, Fabric Seats</td></tr>
+                        <tr><td class="grade-label">FZ Grade</td><td>LED Headlights, Alloy Wheels</td></tr>
+                        <tr><td class="grade-label">Stingray</td><td>Sport Body Kit, Premium Interior</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p style="color:white; font-weight:bold; letter-spacing:2px; text-transform: uppercase; margin-bottom:10px;">RANGE Automobiles PVT LTD</p>
+        <p>Transparency • Privacy • Professionalism</p>
+        <p style="margin-top: 20px;">© 2026 Serving Sri Lanka Islandwide</p>
+    </footer>
+
+</body>
+</html>

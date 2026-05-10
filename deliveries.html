@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliveries | RANGE AUTOMOBILES</title>
+    <style>
+        :root { --maroon: #800000; --white: #ffffff; --text-dim: #bbbbbb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: #000; color: var(--white); line-height: 1.6; }
+
+        nav { 
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            background: #000; border-bottom: 2px solid var(--maroon); position: sticky; top: 0; z-index: 1000; 
+        }
+        .nav-logo { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4rem; color: var(--white); text-decoration: none; }
+        .nav-logo span { color: var(--maroon); }
+        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--maroon); }
+
+        .portfolio-header { padding: 80px 5% 40px; text-align: center; }
+        .portfolio-header h1 { font-size: 2.8rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
+        .policy-banner { background: #0a0a0a; padding: 20px; border: 1px dashed #444; margin: 0 auto 50px; max-width: 1000px; font-size: 0.9rem; color: var(--text-dim); }
+
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 5% 80px; }
+        .delivery-card { background: #111; border: 1px solid #222; overflow: hidden; transition: 0.4s; }
+        .delivery-card:hover { border-color: var(--maroon); transform: translateY(-5px); }
+        .delivery-img { width: 100%; height: 350px; object-fit: cover; filter: brightness(80%); transition: 0.5s; }
+        .delivery-card:hover .delivery-img { filter: brightness(100%); }
+        .delivery-info { padding: 25px; border-top: 3px solid var(--maroon); }
+        .delivery-info h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: #555; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">RANGE <span>AUTOMOBILES</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="deliveries.html" class="active">Deliveries</a></li>
+            <li><a href="specifications.html">Specifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="portfolio-header">
+        <h1>PORTFOLIO OF <span style="color:var(--maroon)">EXCELLENCE</span></h1>
+        <div class="policy-banner">
+            <strong>OUR COMMITMENT:</strong> We value customer privacy over social media reach. This gallery exclusively showcases units where the client has explicitly requested their vehicle be featured.
+        </div>
+    </header>
+
+    <section class="portfolio-grid">
+        <div class="delivery-card">
+            <img src="delivered-1.png" alt="Range Rover Velar" class="delivery-img">
+            <div class="delivery-info"><h3>Range Rover Velar</h3></div>
+        </div>
+        <div class="delivery-card">
+            <img src="delivered-2.png" alt="Honda Vezel" class="delivery-img">
+            <div class="delivery-info"><h3>Honda Vezel</h3></div>
+        </div>
+        <div class="delivery-card">
+            <img src="delivered-3.png" alt="Premium Acquisition" class="delivery-img">
+            <div class="delivery-info"><h3>Premium Acquisition</h3></div>
+        </div>
+        <div class="delivery-card">
+            <img src="delivered-4.png" alt="Premium Acquisition" class="delivery-img">
+            <div class="delivery-info"><h3>Premium Acquisition</h3></div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color:var(--maroon); font-weight:bold; letter-spacing:2px; margin-bottom:10px;">RANGE AUTOMOBILES PVT LTD</p>
+        <p>INTEGRITY • PRIVACY • RESPECT</p>
+    </footer>
+
+</body>
+</html>

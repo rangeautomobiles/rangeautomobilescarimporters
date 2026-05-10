@@ -9,7 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
         body { background-color: var(--dark); color: var(--white); overflow-x: hidden; line-height: 1.6; }
 
-        /* Navigation with Large Logo */
+        /* Navigation Bar with Large Logo and Tabs */
         nav { 
             padding: 10px 5%; 
             display: flex; 
@@ -22,12 +22,19 @@
             z-index: 1000; 
         }
         .nav-logo { display: flex; align-items: center; gap: 20px; }
-        /* Logo size set to 90px for high visibility */
-        .nav-logo img { height: 90px; width: auto; } 
+        .nav-logo img { height: 90px; width: auto; } /* Large Logo size */
         .nav-logo span { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4rem; }
         
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--white); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
         .nav-links a:hover, .nav-links a.active { color: var(--maroon); }
 
         /* Hero Section with Animation */
@@ -37,17 +44,20 @@
                         url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center;
         }
-        .hero-content { animation: slideUp 1.5s ease-out; }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .hero-content { animation: slideUpFade 1.8s ease-out forwards; }
+
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 10px; }
+
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; }
         .slogan { font-size: 1.2rem; letter-spacing: 2px; color: #ccc; margin-bottom: 40px; text-transform: uppercase; }
 
-        /* Inquiry Buttons */
+        /* Buttons */
         .btn-box { display: flex; gap: 20px; justify-content: center; }
-        .btn { padding: 16px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border-radius: 2px; }
+        .btn { padding: 16px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border-radius: 2px; font-size: 0.85rem; }
         .btn-maroon { background: var(--maroon); color: white; border: 1px solid var(--maroon); }
         .btn-white { border: 1px solid white; color: white; }
         .btn:hover { background: white; color: black; transform: translateY(-5px); }
@@ -60,7 +70,7 @@
         .car-card img { width: 100%; height: 260px; object-fit: cover; }
         .car-card div { padding: 25px; text-align: left; }
         .car-card h3 { text-transform: uppercase; margin-bottom: 12px; color: var(--maroon); letter-spacing: 1px; }
-        .car-card p { color: #888; font-size: 0.95rem; }
+        .car-card p { color: #888; font-size: 0.95rem; line-height: 1.6; }
 
         footer { padding: 60px; text-align: center; border-top: 1px solid #222; background: #000; color: #666; font-size: 0.8rem; }
     </style>
@@ -72,6 +82,7 @@
             <img src="logo.png" alt="RANGE Logo"> 
             <span><b style="color:var(--maroon)">RANGE</b> AUTOMOBILES</span>
         </div>
+        
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -98,30 +109,30 @@
                 <img src="range-rover.png" alt="Range Rover Velar">
                 <div>
                     <h3>Premium SUVs</h3>
-                    [span_1](start_span)<p>Sourcing high-spec Range Rovers and luxury 4x4 vehicles directly from global auctions[span_1](end_span).</p>
+                    <p>Sourcing high-spec Range Rovers and luxury 4x4 vehicles directly from global auctions with full history.</p>
                 </div>
             </div>
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800" alt="European Luxury">
                 <div>
                     <h3>European Excellence</h3>
-                    [span_2](start_span)<p>Specializing in BMW, Mercedes-Benz, and Audi with 100% transparent history[span_2](end_span).</p>
+                    <p>Specializing in BMW, Mercedes-Benz, and Audi with 100% transparent history and premium grade checks.</p>
                 </div>
             </div>
             <div class="car-card">
-                <img src="performance.png" alt="Performance Cars">
+                <img src="performance.png" alt="Performance Selection">
                 <div>
                     <h3>Performance Selection</h3>
-                    [span_3](start_span)<p>High-end performance models sourced from Japan, UK, and Thailand[span_3](end_span).</p>
+                    <p>High-end performance models sourced from Japan, UK, and Thailand for the true enthusiast.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <span style="color:white; font-weight:bold; letter-spacing:2px; display:block; margin-bottom:10px;">RANGE AUTOMOBILES PVT LTD</span>
-        [span_4](start_span)<p>Transparency • Privacy • Professionalism[span_4](end_span)</p>
-        [span_5](start_span)<p style="margin-top: 20px;">© 2026 Serving Sri Lanka Islandwide[span_5](end_span)</p>
+        <p style="color:white; font-weight:bold; letter-spacing:2px; margin-bottom:10px; text-transform: uppercase;">RANGE Automobiles PVT LTD</p>
+        <p>Transparency • Privacy • Professionalism</p>
+        <p style="margin-top: 20px;">© 2026 Serving Sri Lanka Islandwide</p>
     </footer>
 
 </body>

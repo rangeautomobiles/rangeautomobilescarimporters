@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | RANGE AUTOMOBILES</title>
+    <style>
+        :root { 
+            --maroon: #800000; 
+            --white: #ffffff; 
+            --text-dim: #bbbbbb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: #000; color: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation */
+        nav { 
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; 
+            background: #000; border-bottom: 2px solid var(--maroon); position: sticky; top: 0; z-index: 1000; 
+        }
+        .nav-logo { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4rem; color: var(--white); text-decoration: none; }
+        .nav-logo span { color: var(--maroon); }
+        
+        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--maroon); }
+        
+        /* Promo Button in Nav */
+        .promo-nav-btn { border: 1px solid var(--maroon); padding: 8px 15px; border-radius: 2px; background: rgba(128, 0, 0, 0.1); }
+        .promo-nav-btn:hover { background: var(--maroon); color: white !important; }
+
+        /* Hero Video Section */
+        .hero {
+            position: relative; height: 60vh; width: 100%; overflow: hidden;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            background-color: #1a1a1a;
+        }
+        .hero video {
+            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+            width: auto; height: auto; transform: translate(-50%, -50%); z-index: 1; filter: brightness(40%);
+        }
+        .hero-content { position: relative; z-index: 2; padding: 20px; }
+        .hero-content h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 10px; }
+        .hero-content h1 span { color: var(--maroon); }
+
+        /* Privacy & Standard Sections */
+        .section-padding { padding: 80px 10%; position: relative; z-index: 3; }
+        
+        .privacy-box { 
+            background: #0a0a0a; border: 1px solid #222; padding: 50px; text-align: center; margin-bottom: 60px; 
+        }
+        .privacy-box h2 { color: var(--maroon); letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase; }
+        .privacy-box p { max-width: 850px; margin: 0 auto; font-style: italic; color: #ccc; font-size: 1.1rem; }
+        .privacy-tag { border: 1px solid var(--maroon); display: inline-block; padding: 5px 20px; color: var(--maroon); margin-top: 25px; font-size: 0.75rem; letter-spacing: 3px; }
+
+        .standard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .standard-card { background: #111; padding: 40px; border-left: 5px solid var(--maroon); border-bottom: 1px solid #222; }
+        .standard-card h3 { color: var(--maroon); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
+
+        /* Journey Styling */
+        .journey-section { background-color: #050505; padding: 80px 10%; }
+        .journey-item { margin-bottom: 40px; padding-left: 20px; border-left: 1px solid #333; }
+        .journey-item h4 { color: var(--maroon); text-transform: uppercase; margin-bottom: 10px; font-size: 1.2rem; }
+        .journey-item h4 span { color: #fff; margin-right: 10px; }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; margin-top: 50px; font-size: 0.8rem; color: #555; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">RANGE <span>AUTOMOBILES</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="deliveries.html">Deliveries</a></li>
+            <li><a href="specifications.html">Specifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="promo.video.mp4" class="promo-nav-btn" target="_blank">Watch Promo</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="promo.video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>OUR <span>PHILOSOPHY</span></h1>
+            <p>Sourcing the world’s finest vehicles with absolute integrity since 2018.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="privacy-box">
+            <h2>ELITE PRIVACY POLICY</h2>
+            <p>"At RANGE Automobiles, we believe that true luxury is personal and private. We hold a firm commitment to never use our clients as sales tools. Therefore, we do not showcase customer faces or personal handover moments in our marketing <strong>unless explicitly requested by the client.</strong> Our focus remains solely on the excellence of the machine and the integrity of our service."</p>
+            <div class="privacy-tag">PRIVACY • INTEGRITY • RESPECT</div>
+        </div>
+
+        <h2 style="text-align:center; margin-bottom:50px; letter-spacing:5px;">THE <span style="color:var(--maroon)">RANGE STANDARD</span></h2>
+        <div class="standard-grid">
+            <div class="standard-card">
+                <h3>Transparency</h3>
+                <p>Full access to auction sheets and history. No hidden costs, every detail is shared with you.</p>
+            </div>
+            <div class="standard-card">
+                <h3>Global Sourcing</h3>
+                <p>Exclusive access to premium stock in Japan, UK, and Thailand to ensure high specifications.</p>
+            </div>
+            <div class="standard-card">
+                <h3>Expert Grading</h3>
+                <p>Our specialists verify every vehicle grade personally to ensure it meets our strict internal standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey-section">
+        <h2 style="text-align:center; margin-bottom:60px; letter-spacing:5px;">YOUR <span style="color:var(--maroon)">JOURNEY</span></h2>
+        <div class="journey-item">
+            <h4><span>01.</span> Consultation & Budgeting</h4>
+            <p>Expert suggestions and live market pricing based on current currency values and international trends.</p>
+        </div>
+        <div class="journey-item">
+            <h4><span>02.</span> Transparent Quotations</h4>
+            <p>A full cost breakdown with formal quotations. You see exactly where every cent is spent.</p>
+        </div>
+        <div class="journey-item">
+            <h4><span>03.</span> Selection & Bidding</h4>
+            <p>We bid on vehicles based strictly on your preferences, keeping you involved in every choice.</p>
+        </div>
+        <div class="journey-item">
+            <h4><span>04.</span> Logistics & Documentation</h4>
+            <p>Assistance with LC opening and live tracking from the port of loading until arrival in Sri Lanka.</p>
+        </div>
+        <div class="journey-item">
+            <h4><span>05.</span> Clearance & Handover</h4>
+            <p>Guidance through tax clearance and handover of keys, warranty books, and your road-ready vehicle.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color:var(--maroon); font-weight:bold; letter-spacing:2px; margin-bottom:10px;">RANGE AUTOMOBILES PVT LTD</p>
+        <p>© 2026 | Professional Import & Export Sourcing</p>
+    </footer>
+
+</body>
+</html>

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RANGE Automobiles PVT LTD</title>
     <style>
-        :root { --maroon: #800000; --dark: #000000; --white: #ffffff; }
+        :root { --maroon: #800000; --dark: #000000; --white: #ffffff; --grey: #888888; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
-        body { background-color: var(--dark); color: var(--white); overflow-x: hidden; }
+        body { background-color: var(--dark); color: var(--white); overflow-x: hidden; line-height: 1.6; }
 
-        /* Navigation Tabs */
+        /* Navigation with Logo in Top Left */
         nav { 
-            padding: 20px 5%; 
+            padding: 15px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -21,35 +21,32 @@
             top: 0; 
             z-index: 1000; 
         }
-        .nav-logo span { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.2rem; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; }
+        .nav-logo img { height: 45px; width: auto; [span_3](start_span)} /* Restored Logo[span_3](end_span) */
+        .nav-logo span { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.1rem; }
+        
         .nav-links { display: flex; list-style: none; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--maroon); }
 
-        /* Hero Section */
+        /* Hero Section with Animation */
         .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
                         url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center;
         }
-
-        /* Hero Animation and Content */
-        .hero-content {
-            animation: slideInFade 1.8s ease-out forwards; /* Added sliding movement */
+        .hero-content { animation: slideIn 1.5s ease-out; [span_4](start_span)} /* Added Slide Movement[span_4](end_span) */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        .hero h1 { font-size: clamp(2rem, 8vw, 4.5rem); letter-spacing: 6px; text-transform: uppercase; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; letter-spacing: 1px; color: #ccc; margin-bottom: 30px; text-transform: uppercase; }
 
-        @keyframes slideInFade {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; }
-        .slogan { font-size: 1.1rem; letter-spacing: 2px; color: #ccc; margin-bottom: 30px; text-transform: uppercase; }
-
-        /* Inquiry Button Placement */
+        /* Inquiry Buttons */
         .btn-box { display: flex; gap: 15px; justify-content: center; }
-        .btn { padding: 15px 35px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; font-size: 0.85rem; border-radius: 2px; }
+        .btn { padding: 14px 30px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; font-size: 0.8rem; border-radius: 2px; }
         .btn-maroon { background: var(--maroon); color: white; border: 1px solid var(--maroon); }
         .btn-white { border: 1px solid white; color: white; }
         .btn:hover { background: white; color: black; transform: translateY(-3px); }
@@ -60,17 +57,17 @@
         .car-card { background: #000; border: 1px solid #222; border-bottom: 4px solid var(--maroon); overflow: hidden; transition: 0.4s; }
         .car-card img { width: 100%; height: 250px; object-fit: cover; }
         .car-card div { padding: 25px; text-align: left; }
-        .car-card h3 { text-transform: uppercase; margin-bottom: 10px; color: var(--maroon); letter-spacing: 1px; }
-        .car-card p { color: #888; font-size: 0.95rem; line-height: 1.6; }
+        .car-card h3 { text-transform: uppercase; margin-bottom: 10px; color: var(--maroon); font-size: 1.2rem; }
+        .car-card p { color: #888; font-size: 0.9rem; line-height: 1.6; }
 
-        footer { padding: 60px; text-align: center; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-logo">
-            <span><b style="color:var(--maroon)">RANGE</b> AUTOMOBILES</span>
+            <img src="logo.png" alt="RANGE Logo"> <span><b style="color:var(--maroon)">RANGE</b> AUTOMOBILES</span>
         </div>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
@@ -83,7 +80,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>RANGE <span style="color: var(--maroon);">AUTOMOBILES</span></h1>
-            <p class="slogan">Since 2018 Trusted Vehicle Importer Your Trusted Partner</p>
+            <p>Since 2018 Trusted Vehicle Importer Your Trusted Partner</p>
             <div class="btn-box">
                 <a href="https://wa.me/971508324828" class="btn btn-maroon">Direct Inquiry</a>
                 <a href="specifications.html" class="btn btn-white">View Inventory</a>
@@ -98,30 +95,30 @@
                 <img src="range-rover.png" alt="Range Rover Velar">
                 <div>
                     <h3>Range Rover Velar</h3>
-                    [span_3](start_span)[span_4](start_span)<p>Sourcing high-spec luxury 4x4 vehicles directly from global auctions with 100% transparency[span_3](end_span)[span_4](end_span).</p>
+                    <p>Sourcing high-spec luxury 4x4 vehicles directly from global auctions with 100% transparency.</p>
                 </div>
             </div>
             <div class="car-card">
                 <img src="performance.png" alt="Performance Selection">
                 <div>
                     <h3>Performance Selection</h3>
-                    [span_5](start_span)<p>High-end performance models sourced from Japan, UK, and Thailand for the true enthusiast[span_5](end_span).</p>
+                    <p>High-end performance models sourced from Japan, UK, and Thailand for the true enthusiast.</p>
                 </div>
             </div>
             <div class="car-card">
                 <img src="delivered-1.png" alt="European Excellence">
                 <div>
                     <h3>European Excellence</h3>
-                    [span_6](start_span)<p>Specializing in BMW, Mercedes-Benz, and Audi with verified history and premium grade checks[span_6](end_span).</p>
+                    <p>Specializing in BMW, Mercedes-Benz, and Audi with verified history and premium grade checks.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>RANGE AUTOMOBILES PVT LTD</p>
-        [span_7](start_span)[span_8](start_span)<p>Transparency • Privacy • Professionalism[span_7](end_span)[span_8](end_span)</p>
-        [span_9](start_span)<p style="margin-top: 10px;">© 2026 Serving Sri Lanka Islandwide[span_9](end_span)</p>
+        <p style="color:white; font-weight:bold; letter-spacing:1px; margin-bottom:5px;">RANGE AUTOMOBILES PVT LTD</p>
+        <p>Transparency • Privacy • Professionalism</p>
+        <p style="margin-top: 15px;">© 2026 Serving Sri Lanka Islandwide</p>
     </footer>
 
 </body>

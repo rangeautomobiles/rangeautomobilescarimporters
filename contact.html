@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | RANGE Automobiles PVT LTD</title>
+    <style>
+        :root { 
+            --maroon: #800000; 
+            --bg-gray: #1a1a1a; 
+            --card-gray: #252525; 
+            --white: #ffffff; 
+            --text-dim: #bbbbbb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        
+        body { 
+            background-color: var(--bg-gray); 
+            color: var(--white); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
+
+        /* Navigation Bar */
+        nav { 
+            padding: 10px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(0,0,0,0.95); 
+            border-bottom: 2px solid var(--maroon); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .nav-logo { display: flex; align-items: center; gap: 20px; }
+        .nav-logo img { height: 90px; width: auto; }
+        .nav-logo span { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 1.4rem; }
+        
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--maroon); }
+
+        /* Video Header */
+        .video-header {
+            position: relative;
+            height: 50vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .video-header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: brightness(40%);
+        }
+        .video-content h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 5px; }
+        .video-content p { font-size: 1.1rem; color: var(--maroon); font-weight: bold; letter-spacing: 2px; }
+
+        /* Contact Layout */
+        .contact-container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        
+        .contact-card {
+            background: var(--card-gray);
+            padding: 50px;
+            border: 1px solid #333;
+            border-bottom: 4px solid var(--maroon);
+            text-align: center;
+            transition: 0.3s;
+        }
+        .contact-card:hover { transform: translateY(-10px); }
+        .contact-card h2 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--maroon); }
+        
+        .number-box { margin: 20px 0; }
+        .number-box a { 
+            display: block; 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            margin-bottom: 5px;
+            transition: 0.3s;
+        }
+        .number-box a:hover { color: var(--maroon); }
+        .number-box span { color: #666; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-group { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+        .btn-wa {
+            display: block;
+            padding: 15px;
+            background: var(--maroon);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .btn-wa:hover { background: #600000; }
+        .wa-label { display: block; font-size: 0.7rem; color: #aaa; margin-top: 5px; }
+
+        footer { padding: 60px; text-align: center; border-top: 1px solid #333; color: #666; font-size: 0.8rem; background: #000; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="logo.png" alt="RANGE Logo"> 
+            <span><b style="color:var(--maroon)">RANGE</b> AUTOMOBILES</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="specifications.html">Specifications</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="video
